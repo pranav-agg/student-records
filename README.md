@@ -1,16 +1,25 @@
-# React + Vite
+# Student Record Portal Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based user interface application bundled with Vite that provides an intuitive dashboard for viewing and managing student performance metrics. It connects asynchronously to the Spring Boot backend API.
 
-Currently, two official plugins are available:
+## Tech Stack
+* **Library:** React
+* **Build Tooling:** Vite
+* **Web Server:** Nginx (for containerized static asset serving)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
+* **Path-Based Routing:** Tailored to work seamlessly behind a reverse proxy/Ingress routing layer.
+* **Containerized Environment Injection:** Uses a dynamic runtime script (`replace-env.sh`) to replace environment gateway URLs in the built production assets upon container startup without requiring a code rebuild.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Development Setup
 
-## Expanding the ESLint configuration
+### Prerequisites
+* Node.js (LTS version recommended)
+* npm (comes bundled with Node.js)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Running Locally
+1. Navigate to the frontend directory and install dependencies:
+   ```bash
+   npm install
