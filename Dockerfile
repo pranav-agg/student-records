@@ -4,16 +4,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-ENV VITE_API_URL=PLACEHOLDER_VITE_API_URL
 RUN npm run build
 
 # Stage 2: Serve assets with Nginx
 FROM nginx:stable-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
-
-# Copy our custom script into Nginx's auto-executing initialization folder
-COPY replace-env.sh /docker-entrypoint.d/replace-env.sh
-RUN chmod +x /docker-entrypoint.d/replace-env.sh
 
 EXPOSE 80
 
